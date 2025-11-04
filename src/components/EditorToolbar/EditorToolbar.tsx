@@ -5,13 +5,9 @@ import ToolbarButton from './components/ToolbarButton'
 
 interface EditorToolbarProps {
   editor: Editor | null
-  documentName: string
 }
 
-const EditorToolbar: React.FC<EditorToolbarProps> = ({
-  editor,
-  documentName,
-}) => {
+const EditorToolbar: React.FC<EditorToolbarProps> = ({ editor }) => {
   const [pinned, setPinned] = useState(false)
   if (!editor) {
     return null
@@ -40,7 +36,7 @@ const EditorToolbar: React.FC<EditorToolbarProps> = ({
         <Divider />
 
         <p className="px-2 py-1 text-sm font-medium text-gray-700 bg-transparent border-none focus:outline-none focus:bg-gray-50 rounded-md min-w-[150px] max-w-[300px]">
-          {documentName}
+          Untitled Doc
         </p>
       </div>
 

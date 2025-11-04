@@ -18,6 +18,8 @@ const SlashMenuItem: React.FC<SlashMenuItemProps> = ({
   return (
     <button
       onClick={onClick}
+      role="option"
+      aria-selected={isSelected}
       className={`
         w-full flex items-center gap-3 px-3 py-2.5 text-left
         transition-colors rounded-md

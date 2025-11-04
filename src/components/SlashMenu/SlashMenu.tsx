@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import type { Editor } from '@tiptap/react'
 import SlashMenuItem from './components/SlashMenuItem'
-import { slashCommands, filterCommands, type SlashCommand } from '../../utils/slashCommands'
+import {
+  slashCommands,
+  filterCommands,
+  type SlashCommand,
+} from '../../utils/slashCommands'
 
 interface SlashMenuProps {
   editor: Editor
@@ -10,9 +14,15 @@ interface SlashMenuProps {
   onClose: () => void
 }
 
-const SlashMenu: React.FC<SlashMenuProps> = ({ editor, query, position, onClose }) => {
+const SlashMenu: React.FC<SlashMenuProps> = ({
+  editor,
+  query,
+  position,
+  onClose,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const [filteredCommands, setFilteredCommands] = useState<SlashCommand[]>(slashCommands)
+  const [filteredCommands, setFilteredCommands] =
+    useState<SlashCommand[]>(slashCommands)
   const menuRef = useRef<HTMLDivElement>(null)
 
   // Filter commands based on query
@@ -27,10 +37,12 @@ const SlashMenu: React.FC<SlashMenuProps> = ({ editor, query, position, onClose 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'ArrowDown') {
         event.preventDefault()
-        setSelectedIndex((prev) => (prev + 1) % filteredCommands.length)
+        setSelectedIndex(prev => (prev + 1) % filteredCommands.length)
       } else if (event.key === 'ArrowUp') {
         event.preventDefault()
-        setSelectedIndex((prev) => (prev - 1 + filteredCommands.length) % filteredCommands.length)
+        setSelectedIndex(
+          prev => (prev - 1 + filteredCommands.length) % filteredCommands.length
+        )
       } else if (event.key === 'Enter') {
         event.preventDefault()
         if (filteredCommands[selectedIndex]) {
@@ -66,6 +78,8 @@ const SlashMenu: React.FC<SlashMenuProps> = ({ editor, query, position, onClose 
   return (
     <div
       ref={menuRef}
+      role="listbox"
+      aria-label="Slash command menu"
       className="absolute z-50 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[320px] max-h-[400px] overflow-y-auto"
       style={{ top: position.top, left: position.left }}
     >
@@ -86,4 +100,3 @@ const SlashMenu: React.FC<SlashMenuProps> = ({ editor, query, position, onClose 
 }
 
 export default SlashMenu
-
