@@ -17,7 +17,7 @@ import { textToTiptapJson } from '../../utils/textToTiptap'
 interface ImportDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
-  onImportContent: (content: any) => void
+  onImportContent: (content: Record<string, unknown>) => void
 }
 
 const ImportDialog: React.FC<ImportDialogProps> = ({

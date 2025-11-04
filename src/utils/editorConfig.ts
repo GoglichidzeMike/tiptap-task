@@ -33,4 +33,3 @@ export const getEditorAttributes = () => {
     class: 'prose prose-sm sm:prose focus:outline-none max-w-none p-8',
   }
 }
-

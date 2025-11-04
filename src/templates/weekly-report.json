@@ -16,14 +16,22 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "marks": [{ "type": "bold" }], "text": "Team/Project: " },
+        {
+          "type": "text",
+          "marks": [{ "type": "bold" }],
+          "text": "Team/Project: "
+        },
         { "type": "text", "text": "[Team Name]" }
       ]
     },
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "marks": [{ "type": "bold" }], "text": "Prepared by: " },
+        {
+          "type": "text",
+          "marks": [{ "type": "bold" }],
+          "text": "Prepared by: "
+        },
         { "type": "text", "text": "[Your Name]" }
       ]
     },
@@ -38,7 +46,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Brief summary of the week's activities and overall progress." }
+        {
+          "type": "text",
+          "text": "Brief summary of the week's activities and overall progress."
+        }
       ]
     },
     {
@@ -95,8 +106,15 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Task 1: " },
-                { "type": "text", "text": "Description and current status (70% complete)" }
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Task 1: "
+                },
+                {
+                  "type": "text",
+                  "text": "Description and current status (70% complete)"
+                }
               ]
             }
           ]
@@ -107,8 +125,15 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Task 2: " },
-                { "type": "text", "text": "Description and current status (40% complete)" }
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Task 2: "
+                },
+                {
+                  "type": "text",
+                  "text": "Description and current status (40% complete)"
+                }
               ]
             }
           ]
@@ -119,8 +144,15 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Task 3: " },
-                { "type": "text", "text": "Description and current status (20% complete)" }
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Task 3: "
+                },
+                {
+                  "type": "text",
+                  "text": "Description and current status (20% complete)"
+                }
               ]
             }
           ]
@@ -175,7 +207,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "List any obstacles, dependencies, or issues that need attention:" }
+        {
+          "type": "text",
+          "text": "List any obstacles, dependencies, or issues that need attention:"
+        }
       ]
     },
     {
@@ -186,7 +221,12 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Blocker 1 - [Impact and proposed solution]" }]
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Blocker 1 - [Impact and proposed solution]"
+                }
+              ]
             }
           ]
         },
@@ -195,7 +235,12 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Blocker 2 - [Impact and proposed solution]" }]
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Blocker 2 - [Impact and proposed solution]"
+                }
+              ]
             }
           ]
         }
@@ -209,7 +254,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Important observations, learnings, or decisions made this week." }
+        {
+          "type": "text",
+          "text": "Important observations, learnings, or decisions made this week."
+        }
       ]
     },
     {
@@ -226,7 +274,11 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Metric 1: " },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Metric 1: "
+                },
                 { "type": "text", "text": "[Value/Status]" }
               ]
             }
@@ -238,7 +290,11 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Metric 2: " },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Metric 2: "
+                },
                 { "type": "text", "text": "[Value/Status]" }
               ]
             }
@@ -250,7 +306,11 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Metric 3: " },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Metric 3: "
+                },
                 { "type": "text", "text": "[Value/Status]" }
               ]
             }
@@ -260,4 +320,3 @@
     }
   ]
 }
-

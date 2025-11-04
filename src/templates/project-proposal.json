@@ -9,7 +9,11 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "marks": [{ "type": "bold" }], "text": "Project Name: " },
+        {
+          "type": "text",
+          "marks": [{ "type": "bold" }],
+          "text": "Project Name: "
+        },
         { "type": "text", "text": "[Your Project Name]" }
       ]
     },
@@ -38,7 +42,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Provide a brief overview of the project, its objectives, and expected outcomes. This section should be concise and compelling." }
+        {
+          "type": "text",
+          "text": "Provide a brief overview of the project, its objectives, and expected outcomes. This section should be concise and compelling."
+        }
       ]
     },
     {
@@ -49,7 +56,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Describe the problem or opportunity that this project addresses. Include relevant background information and context." }
+        {
+          "type": "text",
+          "text": "Describe the problem or opportunity that this project addresses. Include relevant background information and context."
+        }
       ]
     },
     {
@@ -65,7 +75,12 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Primary objective: Clearly define the main goal" }]
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Primary objective: Clearly define the main goal"
+                }
+              ]
             }
           ]
         },
@@ -74,7 +89,12 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Secondary objective: Supporting goals" }]
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Secondary objective: Supporting goals"
+                }
+              ]
             }
           ]
         },
@@ -83,7 +103,12 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Tertiary objective: Additional outcomes" }]
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Tertiary objective: Additional outcomes"
+                }
+              ]
             }
           ]
         }
@@ -97,7 +122,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Detail your proposed approach to solving the problem. Include methodology, tools, and resources required." }
+        {
+          "type": "text",
+          "text": "Detail your proposed approach to solving the problem. Include methodology, tools, and resources required."
+        }
       ]
     },
     {
@@ -115,7 +143,11 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Phase 1:" },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Phase 1:"
+                },
                 { "type": "text", "text": " Research and planning (Weeks 1-2)" }
               ]
             }
@@ -128,8 +160,15 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Phase 2:" },
-                { "type": "text", "text": " Development and implementation (Weeks 3-6)" }
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Phase 2:"
+                },
+                {
+                  "type": "text",
+                  "text": " Development and implementation (Weeks 3-6)"
+                }
               ]
             }
           ]
@@ -141,8 +180,15 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Phase 3:" },
-                { "type": "text", "text": " Testing and refinement (Weeks 7-8)" }
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Phase 3:"
+                },
+                {
+                  "type": "text",
+                  "text": " Testing and refinement (Weeks 7-8)"
+                }
               ]
             }
           ]
@@ -154,7 +200,11 @@
             {
               "type": "paragraph",
               "content": [
-                { "type": "text", "marks": [{ "type": "bold" }], "text": "Phase 4:" },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Phase 4:"
+                },
                 { "type": "text", "text": " Deployment and launch (Week 9)" }
               ]
             }
@@ -170,7 +220,10 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Outline the estimated budget and required resources for the project." }
+        {
+          "type": "text",
+          "text": "Outline the estimated budget and required resources for the project."
+        }
       ]
     },
     {
@@ -186,7 +239,9 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Key Performance Indicator 1" }]
+              "content": [
+                { "type": "text", "text": "Key Performance Indicator 1" }
+              ]
             }
           ]
         },
@@ -195,7 +250,9 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Key Performance Indicator 2" }]
+              "content": [
+                { "type": "text", "text": "Key Performance Indicator 2" }
+              ]
             }
           ]
         },
@@ -204,7 +261,9 @@
           "content": [
             {
               "type": "paragraph",
-              "content": [{ "type": "text", "text": "Key Performance Indicator 3" }]
+              "content": [
+                { "type": "text", "text": "Key Performance Indicator 3" }
+              ]
             }
           ]
         }
@@ -218,9 +277,11 @@
     {
       "type": "paragraph",
       "content": [
-        { "type": "text", "text": "Summarize the key points and make a compelling case for project approval." }
+        {
+          "type": "text",
+          "text": "Summarize the key points and make a compelling case for project approval."
+        }
       ]
     }
   ]
 }
-

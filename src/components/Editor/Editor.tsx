@@ -25,7 +25,7 @@ const Editor = () => {
   })
 
   const debouncedLog = useDebouncedCallback(
-    (html: string, text: string, json: any) => {
+    (html: string, text: string, json: Record<string, unknown>) => {
       console.log('HTML:', html)
       console.log('Text:', text)
       console.log('JSON:', json)
@@ -66,7 +66,7 @@ const Editor = () => {
     if (editor && editor.isEmpty) {
       setShowWelcome(true)
     }
-  }, [editor?.state.doc.content.size])
+  }, [editor, editor?.state.doc.content.size])
 
   const handleCloseSlashMenu = () => {
     setShowSlashMenu(false)

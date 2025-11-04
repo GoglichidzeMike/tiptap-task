@@ -2,7 +2,6 @@ import type { Editor as TiptapEditor } from '@tiptap/react'
 import {
   shouldTriggerSlashMenu,
   calculateSlashMenuPosition,
-  isSlashMenuNavigationKey,
 } from './editorHelpers'
 
 interface SlashMenuState {
@@ -18,8 +17,13 @@ interface SlashMenuState {
  */
 export const createKeyDownHandler = (slashState: SlashMenuState) => {
   return (view: any, event: KeyboardEvent) => {
-    const { showSlashMenu, slashQuery, setShowSlashMenu, setSlashQuery, setSlashMenuPosition } =
-      slashState
+    const {
+      showSlashMenu,
+      slashQuery,
+      setShowSlashMenu,
+      setSlashQuery,
+      setSlashMenuPosition,
+    } = slashState
 
     // Handle slash command trigger
     if (event.key === '/' && view.state.selection.empty) {
@@ -105,7 +109,9 @@ export const createUpdateHandler = (
 /**
  * Creates the create handler for the editor
  */
-export const createCreateHandler = (setShowWelcome: (show: boolean) => void) => {
+export const createCreateHandler = (
+  setShowWelcome: (show: boolean) => void
+) => {
   return ({ editor }: { editor: TiptapEditor }) => {
     if (editor.isEmpty) {
       setShowWelcome(true)
@@ -114,4 +120,3 @@ export const createCreateHandler = (setShowWelcome: (show: boolean) => void) => 
     editor.commands.clearContent()
   }
 }
-

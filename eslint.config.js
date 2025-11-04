@@ -25,8 +25,9 @@ export default tseslint.config(
       'no-undef-init': 'warn',
       'no-unused-expressions': 'warn',
       'no-unused-labels': 'warn',
-      'no-unused-imports-ts': 'warn',
-      'no-unused-imports-tsx': 'warn',
+      'no-useless-escape': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

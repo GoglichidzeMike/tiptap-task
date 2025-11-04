@@ -1,10 +1,18 @@
+interface TiptapContent {
+  type: string
+  attrs?: Record<string, unknown>
+  content?: TiptapContent[]
+  text?: string
+  marks?: Array<{ type: string }>
+}
+
 /**
  * Converts plain text to TipTap JSON format
  * Handles paragraphs, headings, and basic formatting
  */
 export const textToTiptapJson = (text: string) => {
   const lines = text.split('\n')
-  const content: any[] = []
+  const content: TiptapContent[] = []
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]
@@ -51,7 +59,7 @@ export const textToTiptapJson = (text: string) => {
 
       // Check if we need to create a new list or add to existing
       const lastItem = content[content.length - 1]
-      if (lastItem && lastItem.type === 'bulletList') {
+      if (lastItem && lastItem.type === 'bulletList' && lastItem.content) {
         lastItem.content.push({
           type: 'listItem',
           content: [
@@ -86,7 +94,7 @@ export const textToTiptapJson = (text: string) => {
       const listText = numberedMatch[1]
 
       const lastItem = content[content.length - 1]
-      if (lastItem && lastItem.type === 'orderedList') {
+      if (lastItem && lastItem.type === 'orderedList' && lastItem.content) {
         lastItem.content.push({
           type: 'listItem',
           content: [
@@ -132,8 +140,8 @@ export const textToTiptapJson = (text: string) => {
  * Parses text with basic inline formatting
  * Supports **bold**, *italic*, and `code`
  */
-export const parseInlineFormatting = (text: string) => {
-  const content: any[] = []
+export const parseInlineFormatting = (text: string): TiptapContent[] => {
+  const content: TiptapContent[] = []
   if (text) {
     content.push({ type: 'text', text })
   }

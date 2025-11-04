@@ -72,7 +72,7 @@ export const readDocFile = async (file: File): Promise<string> => {
   try {
     const text = await readTextFile(file)
     return text
-  } catch (error) {
+  } catch (error: unknown) {
     throw new Error(
       'DOC/DOCX files require additional processing. Please convert to .txt or use a specialized library.'
     )

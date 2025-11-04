@@ -49,14 +49,14 @@ const InitialEditorInput: React.FC<InitialEditorInputProps> = ({
     if (showLocalSlashMenu) {
       if (e.key === 'ArrowDown') {
         e.preventDefault()
-        setSelectedIndex((prev) => (prev + 1) % filteredCommands.length)
+        setSelectedIndex(prev => (prev + 1) % filteredCommands.length)
         return
       }
 
       if (e.key === 'ArrowUp') {
         e.preventDefault()
         setSelectedIndex(
-          (prev) => (prev - 1 + filteredCommands.length) % filteredCommands.length
+          prev => (prev - 1 + filteredCommands.length) % filteredCommands.length
         )
         return
       }
@@ -125,4 +125,3 @@ const InitialEditorInput: React.FC<InitialEditorInputProps> = ({
 }
 
 export default InitialEditorInput
-
