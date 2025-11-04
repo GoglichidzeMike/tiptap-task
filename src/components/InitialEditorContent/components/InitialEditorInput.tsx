@@ -22,10 +22,28 @@ const InitialEditorInput: React.FC<InitialEditorInputProps> = ({
   )
 
   const handleSlashCommand = (command: any) => {
-    // Execute the command on the editor
-    command.command(editor)
-    // Close welcome screen
+    // Close welcome screen first
     onStartTyping()
+    
+    // Small delay to ensure the welcome screen is hidden
+    setTimeout(() => {
+      // Execute the command on the editor
+      command.command(editor)
+      
+      // Insert placeholder text if available
+      if (command.placeholder) {
+        editor.commands.insertContent(command.placeholder)
+        // Select the placeholder text so user can start typing immediately
+        const { from } = editor.state.selection
+        editor.commands.setTextSelection({
+          from: from - command.placeholder.length,
+          to: from,
+        })
+      }
+      
+      // Focus the editor
+      editor.commands.focus()
+    }, 0)
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

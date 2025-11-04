@@ -97,8 +97,8 @@ const InitialEditorContent = ({
   }
 
   return (
-    <div className="absolute inset-0 z-10 flex items-start justify-center pt-16 bg-background pointer-events-none">
-      <div className="w-full max-w-md px-6 pointer-events-auto">
+    <div className="absolute inset-0 z-10 bg-background pointer-events-none pt-[60px]">
+      <div className="w-full max-w-[900px] mx-auto px-8 pointer-events-auto">
         <div className="mb-8">
           <h1 className="text-[28px] font-bold text-primary mb-2">
             Untitled doc

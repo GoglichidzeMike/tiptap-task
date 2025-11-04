@@ -19,6 +19,7 @@ export interface SlashCommand {
   icon: LucideIcon
   command: (editor: Editor) => void
   aliases?: string[]
+  placeholder?: string
 }
 
 export const slashCommands: SlashCommand[] = [
@@ -31,6 +32,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().setParagraph().run()
     },
     aliases: ['p', 'text'],
+    placeholder: 'Start typing...',
   },
   {
     id: 'heading1',
@@ -41,6 +43,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().setHeading({ level: 1 }).run()
     },
     aliases: ['h1', 'title'],
+    placeholder: 'Heading 1',
   },
   {
     id: 'heading2',
@@ -51,6 +54,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().setHeading({ level: 2 }).run()
     },
     aliases: ['h2', 'subtitle'],
+    placeholder: 'Heading 2',
   },
   {
     id: 'heading3',
@@ -61,6 +65,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().setHeading({ level: 3 }).run()
     },
     aliases: ['h3'],
+    placeholder: 'Heading 3',
   },
   {
     id: 'bulletList',
@@ -71,6 +76,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().toggleBulletList().run()
     },
     aliases: ['ul', 'unordered', 'bullet'],
+    placeholder: 'List item',
   },
   {
     id: 'numberedList',
@@ -81,6 +87,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().toggleOrderedList().run()
     },
     aliases: ['ol', 'ordered', '1.'],
+    placeholder: 'List item',
   },
   {
     id: 'todoList',
@@ -91,6 +98,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().toggleTaskList().run()
     },
     aliases: ['todo', 'task', 'checkbox', 'check'],
+    placeholder: 'To-do item',
   },
   {
     id: 'blockquote',
@@ -101,6 +109,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().toggleBlockquote().run()
     },
     aliases: ['quote', 'blockquote'],
+    placeholder: 'Quote text...',
   },
   {
     id: 'codeBlock',
@@ -111,6 +120,7 @@ export const slashCommands: SlashCommand[] = [
       editor.chain().focus().setCodeBlock().run()
     },
     aliases: ['code', 'codeblock', '```'],
+    placeholder: 'Enter code...',
   },
 ]
 

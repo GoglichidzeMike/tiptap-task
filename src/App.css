@@ -51,7 +51,7 @@
 }
 
 .editor-container {
-  @apply max-w-[900px] mx-auto;
+  @apply max-w-[900px] mx-auto pt-[28px];
 }
 
 /* TipTap Task List Styles */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import type { Editor } from '@tiptap/react'
 import SlashMenuItem from './components/SlashMenuItem'
 import {
@@ -25,14 +25,32 @@ const SlashMenu: React.FC<SlashMenuProps> = ({
     useState<SlashCommand[]>(slashCommands)
   const menuRef = useRef<HTMLDivElement>(null)
 
-  // Filter commands based on query
   useEffect(() => {
     const filtered = filterCommands(query)
     setFilteredCommands(filtered)
-    setSelectedIndex(0) // Reset selection when query changes
+    setSelectedIndex(0)
   }, [query])
 
-  // Handle keyboard navigation
+  const executeCommand = useCallback(
+    (command: SlashCommand) => {
+      command.command(editor)
+      
+      // Insert placeholder text if available
+      if (command.placeholder) {
+        editor.commands.insertContent(command.placeholder)
+        // Select the placeholder text so user can start typing immediately
+        const { from } = editor.state.selection
+        editor.commands.setTextSelection({
+          from: from - command.placeholder.length,
+          to: from,
+        })
+      }
+      
+      onClose()
+    },
+    [editor, onClose]
+  )
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'ArrowDown') {
@@ -56,12 +74,7 @@ const SlashMenu: React.FC<SlashMenuProps> = ({
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [selectedIndex, filteredCommands, onClose])
-
-  const executeCommand = (command: SlashCommand) => {
-    command.command(editor)
-    onClose()
-  }
+  }, [selectedIndex, filteredCommands, onClose, executeCommand])
 
   if (filteredCommands.length === 0) {
     return (
