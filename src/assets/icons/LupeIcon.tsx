@@ -28,8 +28,8 @@ export const LupeIcon: React.FC<LupeIconProps> = ({
       <path
         d="M20 20L16.6039 16.6039M16.6039 16.6039C17.9395 15.2678 18.7655 13.4222 18.7655 11.3837C18.7655 7.30578 15.4602 4 11.3828 4C7.30538 4 4 7.30578 4 11.3837C4 15.4615 7.30538 18.7673 11.3828 18.7673C13.4218 18.7673 15.2679 17.9406 16.6039 16.6039Z"
         stroke="#5E52C6"
-        stroke-width="1.5"
-        stroke-linecap="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
     </svg>
   )
