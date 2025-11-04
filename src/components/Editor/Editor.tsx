@@ -4,8 +4,9 @@ import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
 import Placeholder from '@tiptap/extension-placeholder'
 import { useDebouncedCallback } from '../../hooks/useDebounce'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { InitialEditorContent } from '../InitialEditorContent'
+import { EditorToolbar } from '../EditorToolbar'
 
 const Editor = () => {
   const [showWelcome, setShowWelcome] = useState(true)
@@ -56,6 +57,10 @@ const Editor = () => {
     }
   }, [editor?.state.doc.content.size])
 
+  const documentName = useMemo(() => {
+    return editor?.state.doc.content.firstChild?.textContent ?? 'Untitled Doc'
+  }, [editor?.state.doc.content.firstChild?.textContent])
+
   return (
     <div className="relative w-full h-full bg-white rounded-lg border border-b-0 border-gray-200">
       {showWelcome && editor && (
@@ -65,7 +70,7 @@ const Editor = () => {
         />
       )}
 
-      {/* Main Editor Content */}
+      <EditorToolbar editor={editor} documentName={documentName} />
       <EditorContent editor={editor} className="h-full editor-container" />
     </div>
   )
