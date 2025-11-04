@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Base colors */
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  /* Primary colors */
+  --color-primary: #363447;
+  --color-primary-foreground: #ffffff;
+  --color-primary-gray: #c8c8d0;
+
+  /* Secondary colors */
+  --color-secondary: #353342;
+  --color-secondary-foreground: #ffffff;
+  --color-secondary-border: #eaeaec;
+
+  /* Font families */
+  --font-family-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --primary-gray: var(--color-primary-gray);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --secondary-border: var(--color-secondary-border);
+  }
+
+  html {
+    font-family: var(--font-family-sans);
+  }
+
+  body {
+    @apply bg-background text-primary;
+    font-family: inherit;
+  }
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.editor-container {
+  @apply max-w-[900px] mx-auto;
+}
