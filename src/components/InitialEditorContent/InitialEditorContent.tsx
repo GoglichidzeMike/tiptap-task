@@ -8,6 +8,7 @@ import {
 } from '../../assets/icons'
 import InitialEditorContentSection from './components/InitialEditorContentSection'
 import InitialEditorContentItem from './components/InitialEditorContentItem'
+import InitialEditorInput from './components/InitialEditorInput'
 import { TemplateDialog } from '../TemplateDialog'
 import { ImportDialog } from '../ImportDialog'
 import { useState } from 'react'
@@ -102,10 +103,7 @@ const InitialEditorContent = ({
           <h1 className="text-[28px] font-bold text-primary mb-2">
             Untitled doc
           </h1>
-          <input
-            className="text-sm text-secondary/40 focus:outline-none"
-            placeholder="Write, or '/' for commands"
-          />
+          <InitialEditorInput editor={editor} onStartTyping={onActionTaken} />
         </div>
 
         <InitialEditorContentSection title="AI Prompts & Shortcuts">
