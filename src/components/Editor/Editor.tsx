@@ -85,10 +85,8 @@ const Editor = () => {
           onActionTaken={() => setShowWelcome(false)}
         />
       )}
-
       <EditorToolbar editor={editor} />
       <EditorContent editor={editor} className="h-full editor-container" />
-
       {showSlashMenu && editor && (
         <SlashMenu
           editor={editor}

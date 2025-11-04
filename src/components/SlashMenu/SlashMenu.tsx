@@ -34,7 +34,7 @@ const SlashMenu: React.FC<SlashMenuProps> = ({
   const executeCommand = useCallback(
     (command: SlashCommand) => {
       command.command(editor)
-      
+
       // Insert placeholder text if available
       if (command.placeholder) {
         editor.commands.insertContent(command.placeholder)
@@ -45,7 +45,7 @@ const SlashMenu: React.FC<SlashMenuProps> = ({
           to: from,
         })
       }
-      
+
       onClose()
     },
     [editor, onClose]
