@@ -9,6 +9,7 @@ import {
 import InitialEditorContentSection from './components/InitialEditorContentSection'
 import InitialEditorContentItem from './components/InitialEditorContentItem'
 import { TemplateDialog } from '../TemplateDialog'
+import { ImportDialog } from '../ImportDialog'
 import { useState } from 'react'
 
 interface InitialEditorContentProps {
@@ -21,6 +22,7 @@ const InitialEditorContent = ({
   onActionTaken,
 }: InitialEditorContentProps) => {
   const [showTemplatesDialog, setShowTemplatesDialog] = useState(false)
+  const [showImportDialog, setShowImportDialog] = useState(false)
 
   const handleAskAI = () => {
     alert('Ask AI - Coming soon!')
@@ -85,7 +87,12 @@ const InitialEditorContent = ({
   }
 
   const handleImport = () => {
-    alert('File Import - Coming soon!')
+    setShowImportDialog(true)
+  }
+
+  const handleImportContent = (content: any) => {
+    editor.chain().focus().setContent(content).run()
+    onActionTaken()
   }
 
   return (
@@ -137,6 +144,12 @@ const InitialEditorContent = ({
         open={showTemplatesDialog}
         onOpenChange={setShowTemplatesDialog}
         onSelectTemplate={handleSelectTemplate}
+      />
+
+      <ImportDialog
+        open={showImportDialog}
+        onOpenChange={setShowImportDialog}
+        onImportContent={handleImportContent}
       />
     </div>
   )
