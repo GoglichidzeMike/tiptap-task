@@ -51,7 +51,54 @@
 }
 
 .editor-container {
-  @apply max-w-[900px] mx-auto pt-[28px];
+  @apply max-w-[900px] mx-auto pt-[28px] relative;
+}
+
+/* Drag Handle Styles */
+[data-drag-handle] {
+  cursor: grab;
+}
+
+[data-drag-handle]:active {
+  cursor: grabbing;
+}
+
+.custom-drag-handle {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  /* width: 24px; */
+  height: 24px;
+  cursor: grab;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.2s;
+}
+
+.custom-drag-handle:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.custom-drag-handle:active {
+  cursor: grabbing;
+}
+
+.custom-drag-handle::before {
+  content: '⋮⋮';
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1;
+}
+
+.ProseMirror-selectednode {
+  outline: none;
+}
+
+.ProseMirror-dragging {
+  opacity: 0.5;
 }
 
 /* TipTap Task List Styles */

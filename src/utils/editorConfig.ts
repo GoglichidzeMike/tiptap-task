@@ -2,6 +2,8 @@ import StarterKit from '@tiptap/starter-kit'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
 import Placeholder from '@tiptap/extension-placeholder'
+import { DragHandle } from '@tiptap/extension-drag-handle'
+import { NodeRange } from '@tiptap/extension-node-range'
 
 /**
  * Returns the configured TipTap extensions
@@ -22,6 +24,18 @@ export const getEditorExtensions = () => {
       placeholder: "Type '/' for commands...",
       emptyEditorClass: 'is-editor-empty',
     }),
+    DragHandle.configure({
+      render: () => {
+        const element = document.createElement('div')
+        element.classList.add('custom-drag-handle')
+        return element
+      },
+      tippyOptions: {
+        placement: 'left',
+        zIndex: 50,
+      },
+    }),
+    NodeRange,
   ]
 }
 
