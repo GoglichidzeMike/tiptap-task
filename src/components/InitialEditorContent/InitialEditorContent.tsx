@@ -8,6 +8,8 @@ import {
 } from '../../assets/icons'
 import InitialEditorContentSection from './components/InitialEditorContentSection'
 import InitialEditorContentItem from './components/InitialEditorContentItem'
+import { TemplateDialog } from '../TemplateDialog'
+import { useState } from 'react'
 
 interface InitialEditorContentProps {
   editor: Editor
@@ -18,15 +20,14 @@ const InitialEditorContent = ({
   editor,
   onActionTaken,
 }: InitialEditorContentProps) => {
-  // Action handlers
+  const [showTemplatesDialog, setShowTemplatesDialog] = useState(false)
+
   const handleAskAI = () => {
     alert('Ask AI - Coming soon!')
-    onActionTaken()
   }
 
   const handleResearch = () => {
     alert('Make Research - Coming soon!')
-    onActionTaken()
   }
 
   const handleCreateTodoList = () => {
@@ -39,17 +40,32 @@ const InitialEditorContent = ({
           {
             type: 'taskItem',
             attrs: { checked: false },
-            content: [{ type: 'paragraph' }],
+            content: [
+              {
+                type: 'paragraph',
+                content: [{ type: 'text', text: 'Task 1' }],
+              },
+            ],
           },
           {
             type: 'taskItem',
             attrs: { checked: false },
-            content: [{ type: 'paragraph' }],
+            content: [
+              {
+                type: 'paragraph',
+                content: [{ type: 'text', text: 'Task 2' }],
+              },
+            ],
           },
           {
             type: 'taskItem',
             attrs: { checked: false },
-            content: [{ type: 'paragraph' }],
+            content: [
+              {
+                type: 'paragraph',
+                content: [{ type: 'text', text: 'Task 3' }],
+              },
+            ],
           },
         ],
       })
@@ -59,7 +75,13 @@ const InitialEditorContent = ({
   }
 
   const handleTemplates = () => {
-    alert('Templates - Coming soon!')
+    setShowTemplatesDialog(true)
+  }
+
+  const handleSelectTemplate = (templateContent: any) => {
+    editor.chain().focus().setContent(templateContent).run()
+    setShowTemplatesDialog(false)
+    onActionTaken()
   }
 
   const handleImport = () => {
@@ -110,6 +132,12 @@ const InitialEditorContent = ({
           />
         </InitialEditorContentSection>
       </div>
+
+      <TemplateDialog
+        open={showTemplatesDialog}
+        onOpenChange={setShowTemplatesDialog}
+        onSelectTemplate={handleSelectTemplate}
+      />
     </div>
   )
 }

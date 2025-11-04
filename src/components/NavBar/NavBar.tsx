@@ -36,7 +36,7 @@ const NavBar: React.FC<EditorNavbarProps> = ({
 
   return (
     <>
-      <nav className="bg-background border-secondary text-primary relative z-50 container">
+      <nav className="bg-background border-secondary text-primary relative z-50">
         <div className="flex items-center justify-between px-4 py-2">
           <div className="flex items-center gap-1">
             <Button

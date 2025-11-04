@@ -34,7 +34,6 @@ const Editor = () => {
       },
     },
     onUpdate: ({ editor }) => {
-      // Hide welcome when user starts typing
       if (!editor.isEmpty && showWelcome) {
         setShowWelcome(false)
       }
@@ -51,7 +50,6 @@ const Editor = () => {
     content: '',
   })
 
-  // Watch for editor becoming empty again
   useEffect(() => {
     if (editor && editor.isEmpty) {
       setShowWelcome(true)
@@ -59,7 +57,7 @@ const Editor = () => {
   }, [editor?.state.doc.content.size])
 
   return (
-    <div className="relative w-full h-full bg-white rounded-lg border border-gray-200">
+    <div className="relative w-full h-full bg-white rounded-lg border border-b-0 border-gray-200">
       {showWelcome && editor && (
         <InitialEditorContent
           editor={editor}
@@ -68,7 +66,7 @@ const Editor = () => {
       )}
 
       {/* Main Editor Content */}
-      <EditorContent editor={editor} className="h-full" />
+      <EditorContent editor={editor} className="h-full editor-container" />
     </div>
   )
 }
